@@ -1,0 +1,34 @@
+.add{
+    width: 70%;
+    margin-left: max(5vw,25px);
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.add form{
+    gap:10px;
+
+}
+.add-img-upload img {
+    width: 70px;
+
+}
+
+.add-product-name,.add-Movie_description{
+    width: max(40%,280px);
+}
+.add-product-name input, .add-Movie_description textarea{
+    padding: 10px;
+}
+.add-category select{
+    max-width: 120px;
+    padding: 10px;
+}
+.add-btn{
+    max-width: 120px;
+    border: none;
+    padding: 10px;
+    background-color:#FFBADE ;
+    color: white;
+    cursor: pointer;
+}

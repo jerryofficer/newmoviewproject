@@ -1,0 +1,45 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  8px 4%;
+  
+   
+}
+.logo img{
+    width: 200px;
+}
+.profile img{
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+
+
+.profile {
+    position: relative;
+    display: inline-block;
+}
+
+.profile img {
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.logout-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #666;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.logout-dropdown:hover {
+    background:transparent;
+}

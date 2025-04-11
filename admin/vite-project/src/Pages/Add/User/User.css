@@ -1,0 +1,15 @@
+.movie-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.movie-table th, .movie-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.movie-table th {
+    background-color: transparent;
+}

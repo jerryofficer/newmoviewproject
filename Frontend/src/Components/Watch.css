@@ -1,0 +1,25 @@
+.video-link{
+    display: flex;
+    gap:20px;
+   
+}
+
+.watchvideo img{
+    margin-top: 10px;
+    width: 6vw;
+}
+
+@media (max-width:768px) {
+
+    .video-link{
+        flex-direction: column;
+    }
+    .video-link iframe{
+        width: 90vw;
+        height: 50vh;
+    }
+    .watchvideo img{
+        width: 90vw;
+        height: 60vh;
+    }
+}
