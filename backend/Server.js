@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken")
 const MovieModel = require("./MovieSchem")
 const router = express.Router();
 const bodyParser = require("body-parser");
+
 // const multer = require("multer");
 // const path = require("path");
 
@@ -22,7 +23,7 @@ app.use("/uploads", express.static("uploads"));
 
 //connection
 mongoose.connect('mongodb+srv://Divya:jerryofficer@cluster0.vg6jnb7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
-    
+
     .then(() => {
         console.log("connection is connect")
     })
@@ -35,6 +36,7 @@ let movies = [
     { id: 1, movieTitle: "Inception", moviedescription: "Mind-bending thriller", moviemeta: "Sci-Fi" },
     { id: 2, movieTitle: "Titanic", moviedescription: "Romantic drama", moviemeta: "Romance" },
 ];
+
 
 app.delete("/movie/:id", async (req, res) => { // ✅ Corrected Route Parameter
     try {
@@ -69,11 +71,11 @@ app.put("/movie/:id", async (req, res) => {
 
 
 //Schema
-    
+
 const userSchema = new mongoose.Schema({
     name: String,
     email: String,
-    password:String,
+    password: String,
 })
 
 
@@ -87,7 +89,7 @@ app.post("/signup", async (req, res) => {
     if (existinguser) {
         return res.json(400).json({ message: "user already exist" });
     }
-    const hashpassword = await bcrypt.hash(password, 10); 
+    const hashpassword = await bcrypt.hash(password, 10);
     const user = new Users({ name, email, password: hashpassword });
     await user.save();
     res.json({ message: "user registerd successfully" });
@@ -143,7 +145,7 @@ app.put("/users/:id", async (req, res) => {
         const { name, email } = req.body;
         const updatedUser = await Users.findByIdAndUpdate(
             req.params.id,
-            { name, email },     
+            { name, email },
             { new: true, runValidators: true }
         );
 

@@ -8,7 +8,7 @@ import TvSeries from './Components/TvSeries';
 import TopAiring from './Components/TopAiring'
 import Signup from './Components/Signup'
 import Lgin from './Components/Lgin';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route , Navigate } from 'react-router-dom';
 import Feedback from './Components/Feedback';
 import Result from './Components/Result';
 import Footer from './Components/Footer';
@@ -27,18 +27,20 @@ function App() {
 
   // const addfeedback = (feedback) => {
   //   setFeedback((prev) => [...prev, feedback]);
-    
   // }
 
+  let token = localStorage.getItem('token')
+
+  console.log(token)
+  
   return (
     <>
-   
       {/* <Result feedback={feedback}/> */}
       <Routes>
-        <Route path='/' element={<Lgin />}></Route>
-        <Route path='/Navbar' element={<Navbar />}></Route>
-        <Route path='/Home' element={<Home />}></Route>
-        <Route path='/Movies' element={<Movies />}></Route>
+        <Route path='/' element={token?<Navigate to='/Navbar'/> :<Lgin />}></Route>
+        <Route path='/Navbar' element={token?<Navbar/>:<Navigate to='/'/>}></Route>
+        <Route path='/Home' element={token?<Home/>:<Navigate to='/' />}></Route>
+        <Route path='/Movies' element={token?<Movies />:<Navigate to='/' />}></Route>
         <Route path='/TvSeries' element={<TvSeries />}></Route>
         <Route path='/MostPopular' element={<MostPopular />}></Route>
         <Route path='/TopAiring' element={<TopAiring />}></Route>
@@ -46,11 +48,6 @@ function App() {
         <Route path='/Watch' element={<Watch />}></Route>
         <Route path='/Feedback' element={<Feedback  />} />
         <Route path="/Result" element={<Result />} />
-      
-        
-       
-      
-       
       </Routes>
     </>
   );

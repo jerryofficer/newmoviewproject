@@ -13,7 +13,7 @@ const Signup = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch("http://localhost:6060/signup", {
+            const response = await fetch("https://newmoviewproject.onrender.com/signup", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, email, password })

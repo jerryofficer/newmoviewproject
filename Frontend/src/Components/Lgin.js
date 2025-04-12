@@ -11,8 +11,9 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevents page reload
 
+    console.log(email , password)
     try {
-      const response = await fetch("http://localhost:6060/login", {
+      const response = await fetch("https://newmoviewproject.onrender.com/login", {
         method: "POST", // Fixed typo
         headers: {
           "Content-Type": "application/json"
@@ -21,12 +22,12 @@ const Login = () => {
       });
 
       const data = await response.json();
-
       if (response.ok) {
         localStorage.setItem("token", data.token);
+        console.log(data)
         setMessage("Login successful!");
-
-        navigate("/Navbar"); // Change "/home" to the correct route where your Navbar is displayed
+        
+        window.location.reload()      // Change "/home" to the correct route where your Navbar is displayed
       } else {
         setMessage(data.message || "Login failed!");
       }
@@ -69,8 +70,6 @@ const Login = () => {
           <div className="register">
             <span>
               Don't have an account? <NavLink to="/Signup">SignUp</NavLink><br></br>
-             
-            
             </span>
           </div>
         </div>

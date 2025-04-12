@@ -11,7 +11,7 @@ const Movies = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:6060/movie", {
+        const response = await fetch("https://newmoviewproject.onrender.com/movie", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const Movies = () => {
 
   // 🔹 Search filter
   const filteredMovies = topMovies.filter(movie =>
-    movie.movieTitle.toLowerCase().includes(searchTerm.toLowerCase()) // Case-insensitive search
+    movie.movieTitle.toLowerCase().includes(searchTerm.toLowerCase()) 
   );
 
   return (

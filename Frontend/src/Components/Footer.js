@@ -7,7 +7,7 @@ const Footer = () => {
       <>
           <footer className="bg-gray-900 text-white py-6">
               <div className="text-center">
-                  <h2 className="text-lg font-semibold"><NavLink to="/Navbar"><img src="https://hianime.to/images/logo.png?v=0.1" width={165} height={40}></img></NavLink>  </h2>
+                  <h2 className="text-lg font-semibold"><NavLink to="/Navbar"><img src="./logo.png" width={165} height={40}></img></NavLink>  </h2>
                   <p className="text-sm text-gray-400">
                       Searching anime ordered by alphabet name A to Z.
                   </p>

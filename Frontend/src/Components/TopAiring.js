@@ -14,7 +14,7 @@ const TopAiring = () => {
 
   useEffect(() => {
     const abc = async () => {
-      await fetch("http://localhost:6060/movie ", {
+      await fetch("https://newmoviewproject.onrender.com/movie ", {
         method: "GET",
         headers: {
           "Content-Type":"application/json",

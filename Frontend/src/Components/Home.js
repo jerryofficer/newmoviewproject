@@ -145,7 +145,7 @@ const Home = () => {
 
   useEffect(() => {
     const abc = async () => {
-      await fetch("http://localhost:6060/movie", {
+      await fetch("https://newmoviewproject.onrender.com/movie", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -235,6 +235,12 @@ const Home = () => {
     return () => clearTimeout(autoSlideRef.current);
   }, []);
 
+  function logout() {
+    
+    localStorage.clear()
+    
+    window.location.reload()
+  }
 
   return (
     <>
@@ -244,7 +250,7 @@ const Home = () => {
             
             
             <h1 className="logo">
-              <NavLink to="/Navbar"><img src="https://hianime.to/images/logo.png?v=0.1" width={165} height={40}></img></NavLink>  
+              <NavLink to="/Navbar"><img src="./logo.png" width={165} height={40}></img></NavLink>  
             </h1>
             {/* <input type="text" placeholder="Search anime..." className="search-bar" />
             <button className="filter-btn">Filter</button> */}
@@ -273,7 +279,7 @@ const Home = () => {
           
           
             
-            <NavLink to="/"><button className="login-btn">Login</button></NavLink> 
+            <button className="login-btn" onClick={logout}>Logout</button>
           </div>
           
         </nav>
